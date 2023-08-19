@@ -23,7 +23,7 @@ go get -u github.com/angelodlfrtr/go-invoice-generator
 package main
 
 import (
-	"io/ioutil"
+	"os"
 	"testing"
 
 	generator "github.com/angelodlfrtr/go-invoice-generator"
@@ -54,7 +54,7 @@ func TestNew(t *testing.T) {
 	doc.SetDate("02/03/2021")
 	doc.SetPaymentTerm("02/04/2021")
 
-	logoBytes, _ := ioutil.ReadFile("./example_logo.png")
+	logoBytes, _ := os.ReadFile("./example_logo.png")
 
 	doc.SetCompany(&generator.Contact{
 		Name: "Test Company",
